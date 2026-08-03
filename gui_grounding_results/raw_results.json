@@ -1,0 +1,215 @@
+[
+  {
+    "model": "Qwen2.5-VL-7B-Instruct",
+    "image": "02_browser-sounds-tab.png",
+    "instruction": "Click the 'Sounds' item in the left sidebar under Library",
+    "raw_text": "[10,265,134,287]",
+    "xy": null,
+    "latency_sec": 3.79,
+    "annotated_path": "gui_grounding_results/annotated/Qwen2.5-VL-7B-Instruct__task0__02_browser-sounds-tab.png"
+  },
+  {
+    "model": "Qwen2.5-VL-7B-Instruct",
+    "image": "02_browser-sounds-tab.png",
+    "instruction": "Click the Solo (S) button on the '4 Audio' track",
+    "raw_text": "(1580,923), (1607,923)",
+    "xy": [
+      1580.0,
+      923.0
+    ],
+    "latency_sec": 2.92,
+    "annotated_path": "gui_grounding_results/annotated/Qwen2.5-VL-7B-Instruct__task1__02_browser-sounds-tab.png"
+  },
+  {
+    "model": "Qwen2.5-VL-7B-Instruct",
+    "image": "02_browser-sounds-tab.png",
+    "instruction": "Click the 'Edit' button in the Filters bar of the browser",
+    "raw_text": "(280,157)",
+    "xy": [
+      280.0,
+      157.0
+    ],
+    "latency_sec": 2.25,
+    "annotated_path": "gui_grounding_results/annotated/Qwen2.5-VL-7B-Instruct__task2__02_browser-sounds-tab.png"
+  },
+  {
+    "model": "Qwen2.5-VL-7B-Instruct",
+    "image": "02_edit-menu.png",
+    "instruction": "Click 'Group' in the Edit menu",
+    "raw_text": "[105,264]",
+    "xy": [
+      105.0,
+      264.0
+    ],
+    "latency_sec": 2.25,
+    "annotated_path": "gui_grounding_results/annotated/Qwen2.5-VL-7B-Instruct__task3__02_edit-menu.png"
+  },
+  {
+    "model": "Qwen2.5-VL-7B-Instruct",
+    "image": "02_edit-menu.png",
+    "instruction": "Click 'Freeze Track' in the Edit menu",
+    "raw_text": "[102,345]",
+    "xy": [
+      102.0,
+      345.0
+    ],
+    "latency_sec": 2.26,
+    "annotated_path": "gui_grounding_results/annotated/Qwen2.5-VL-7B-Instruct__task4__02_edit-menu.png"
+  },
+  {
+    "model": "Qwen2.5-VL-7B-Instruct",
+    "image": "02_edit-menu.png",
+    "instruction": "Click 'Consolidate' in the Edit menu",
+    "raw_text": "[102,348]",
+    "xy": [
+      102.0,
+      348.0
+    ],
+    "latency_sec": 2.24,
+    "annotated_path": "gui_grounding_results/annotated/Qwen2.5-VL-7B-Instruct__task5__02_edit-menu.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "02_browser-sounds-tab.png",
+    "instruction": "Click the 'Sounds' item in the left sidebar under Library",
+    "raw_text": "(158,273)",
+    "xy": [
+      158.3271221532091,
+      276.16216216216213
+    ],
+    "latency_sec": 2.53,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task0__02_browser-sounds-tab.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "02_browser-sounds-tab.png",
+    "instruction": "Click the Solo (S) button on the '4 Audio' track",
+    "raw_text": "(1846,920)",
+    "xy": [
+      1849.8219461697724,
+      930.6563706563707
+    ],
+    "latency_sec": 2.5,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task1__02_browser-sounds-tab.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "02_browser-sounds-tab.png",
+    "instruction": "Click the 'Edit' button in the Filters bar of the browser",
+    "raw_text": "(616,162)",
+    "xy": [
+      617.2753623188406,
+      163.87644787644788
+    ],
+    "latency_sec": 2.43,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task2__02_browser-sounds-tab.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "02_edit-menu.png",
+    "instruction": "Click 'Group' in the Edit menu",
+    "raw_text": "(168,476)",
+    "xy": [
+      168.34782608695653,
+      481.5135135135135
+    ],
+    "latency_sec": 2.43,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task3__02_edit-menu.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "02_edit-menu.png",
+    "instruction": "Click 'Freeze Track' in the Edit menu",
+    "raw_text": "(197,882)",
+    "xy": [
+      197.40786749482402,
+      892.2162162162161
+    ],
+    "latency_sec": 2.42,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task4__02_edit-menu.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "02_edit-menu.png",
+    "instruction": "Click 'Consolidate' in the Edit menu",
+    "raw_text": "(193,992)",
+    "xy": [
+      193.39958592132507,
+      1003.4903474903475
+    ],
+    "latency_sec": 2.42,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task5__02_edit-menu.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "02_browser-sounds-tab.png",
+    "instruction": "Click the 'Sounds' item in the left sidebar under Library",
+    "raw_text": "(158,273)",
+    "xy": [
+      158.0,
+      273.0
+    ],
+    "latency_sec": 2.49,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task0__02_browser-sounds-tab.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "02_browser-sounds-tab.png",
+    "instruction": "Click the Solo (S) button on the '4 Audio' track",
+    "raw_text": "(1846,921)",
+    "xy": [
+      1846.0,
+      921.0
+    ],
+    "latency_sec": 2.48,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task1__02_browser-sounds-tab.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "02_browser-sounds-tab.png",
+    "instruction": "Click the 'Edit' button in the Filters bar of the browser",
+    "raw_text": "(606,163)",
+    "xy": [
+      606.0,
+      163.0
+    ],
+    "latency_sec": 2.42,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task2__02_browser-sounds-tab.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "02_edit-menu.png",
+    "instruction": "Click 'Group' in the Edit menu",
+    "raw_text": "(185,476)",
+    "xy": [
+      185.0,
+      476.0
+    ],
+    "latency_sec": 2.41,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task3__02_edit-menu.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "02_edit-menu.png",
+    "instruction": "Click 'Freeze Track' in the Edit menu",
+    "raw_text": "(197,882)",
+    "xy": [
+      197.0,
+      882.0
+    ],
+    "latency_sec": 2.42,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task4__02_edit-menu.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "02_edit-menu.png",
+    "instruction": "Click 'Consolidate' in the Edit menu",
+    "raw_text": "(195,991)",
+    "xy": [
+      195.0,
+      991.0
+    ],
+    "latency_sec": 2.44,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task5__02_edit-menu.png"
+  }
+]
