@@ -112,3 +112,171 @@ check these first when debugging.
 - `GUI_Grounding_Updated.md` — user's source executive summary
 - `screenshots/02_browser-sounds-tab.png`, `screenshots/02_edit-menu.png` —
   the two test images currently wired into `TASKS`
+- `select_diverse_screenshots.py` — added in session 2, see below. Picks a
+  visually-diverse shortlist out of the user's full `Ableton_screenshots/`
+  folder (40 files) for the next benchmark round.
+
+---
+
+## Session 2 findings (first full run, both bugs fixed)
+
+The disk-full and GTA1 `min_pixels` crash from session 1 were both fixed
+(see git history / the script itself — `delete_model_from_disk()` clears
+each model's HF cache after use, and `_get_min_max_pixels()` handles the
+newer `transformers` API where min/max pixels moved off the image
+processor's direct attributes and into `.size["shortest_edge"/"longest_edge"]`).
+Rerun completed cleanly: 18/18 (3 models × 6 tasks), no errors, no "not
+parsed" rows for GTA1 or UI-TARS.
+
+**Visually inspected all 18 annotated crosshairs against the source
+screenshots** (not just the raw coordinates — see `context.md`'s original
+"Quality" guidance). Result:
+
+- **GTA1-7B: 6/6 visually correct.**
+- **UI-TARS-1.5-7B: 6/6 visually correct**, and its coordinates land within
+  ~10-15px of GTA1's on nearly every task — the two specialists agree with
+  each other closely, which is a reassuring cross-check given there's no
+  labeled ground truth.
+- **Qwen2.5-VL-7B-Instruct (the control): 0/6 visually correct.** Not just
+  "close but off" — three distinct failure modes: (1) returned a bounding
+  box instead of a point on task 0, so the parser correctly logged "not
+  parsed"; (2) missed the target element entirely on tasks 1-3 (e.g.
+  predicted a point ~270px away from the actual Solo button, landing in an
+  unrelated part of the mixer); (3) most notably, on tasks 4 and 5 ("Freeze
+  Track" vs "Consolidate," two different Edit-menu items ~100px apart) it
+  returned nearly *identical* coordinates for both — it doesn't appear to be
+  reading the specific instruction on those two, just returning "somewhere
+  in the lower Edit menu."
+
+This is consistent with the hypothesis going in (Qwen is the non-specialized
+baseline, expected to be weakest) but the *degree* of the gap — a clean 0/6
+vs two 6/6s on this small sample — was more stark than expected. Caveat
+repeated from session 1: six tasks on two screenshots is a vibe check, not
+a statistically meaningful benchmark. Treat GTA1/UI-TARS's 6/6 as "looked
+solid on this sample," not "solved."
+
+The full breakdown (per-task verdicts + reasoning) is in
+`gui_grounding_results/report.md` under "Visual quality assessment."
+
+## Next session plan: expand testing, GTA1 vs UI-TARS only
+
+User wants to drop the Qwen control (its weakness is now well-established on
+this sample) and instead throw more/harder screenshots at **GTA1-7B and
+UI-TARS-1.5-7B only**, since those two are the ones actually worth
+differentiating between. User has ~32 more Ableton screenshots on disk
+(`Ableton_screenshots/`, tree pasted into an earlier message — includes a
+`menus/` subfolder with 8 more menu screenshots, so 40 files total) but
+many are near-duplicates of each other (user's own estimate: "sometimes only
+90% visually similar" — e.g. same panel with a different item highlighted).
+
+To avoid burning Colab time on redundant layouts, `select_diverse_screenshots.py`
+was written to shortlist a diverse subset automatically:
+
+- Computes a 64-bit perceptual hash (dHash — gradient-based, sensitive to
+  layout/content changes rather than overall brightness/color, so it's a
+  reasonable fit for "different panel/tab/menu" vs "same panel, cursor
+  moved") for every image, no GPU/ML needed, just Pillow.
+- Clusters near-duplicates together (default threshold: >=90% similar,
+  matching the user's own estimate of what counts as "basically the same")
+  and keeps only the most "typical" representative of each cluster (the one
+  with the smallest total distance to its cluster-mates, not just an
+  arbitrary/alphabetical pick).
+- If more distinct images survive deduping than the target shortlist size,
+  runs greedy farthest-point sampling on the survivors to maximize visual
+  spread across the final pick, rather than clustering in one area.
+- Copies the shortlist into an output folder and writes a full CSV report
+  (every image, its cluster, its similarity to the cluster representative,
+  whether it made the final cut) so the user can eyeball/override the
+  automatic choices before committing to a Colab run.
+- **Tested** against a synthetic near-duplicate set built from this
+  session's own annotated images (3 models × crosshair variants of the same
+  2 base screenshots = 23 near-identical files): correctly collapsed all 23
+  down to exactly the 2 true underlying screenshots. Dedup logic confirmed
+  working; not yet run against the user's real 40-file `Ableton_screenshots/`
+  folder (that folder lives on the user's machine, not in this environment).
+
+**When the user comes back with a shortlist + new Colab run:**
+1. Ask them to run `select_diverse_screenshots.py` locally against
+   `Ableton_screenshots/` first (defaults: target 15 images, 90% dup
+   threshold — both overridable via flags) and review `screenshot_diversity_report.csv`
+   before uploading the shortlist to Colab, in case the automatic clustering
+   grouped anything they'd actually want to keep separate (dHash is decent
+   but not perfect — two visually-different-but-structurally-similar UI
+   states, e.g. two different device racks with the same panel chrome,
+   could conceivably land in the same cluster).
+2. Update `gui_grounding_benchmark.py`'s `SCREENSHOTS_DIR`/`TASKS` to point
+   at the new shortlist + a richer set of instructions per image (the
+   current `TASKS` list only has 6 entries across 2 images — will need
+   expanding to actually exercise the new screenshots).
+3. Consider trimming `MODELS` down to just GTA1-7B and UI-TARS-1.5-7B per
+   the user's request, which also frees up disk/time for more
+   screenshots/instructions per Colab session instead of spending it on a
+   control that's already shown to be weak.
+4. Same evaluation approach as this session: open annotated PNGs, don't
+   trust raw coordinates alone.
+
+---
+
+## Session 3 (cut short — hit token limit before finishing)
+
+Session 3 started the handoff above but ran out of context budget partway
+through. Status as of the cutoff:
+
+- **`gui_grounding_benchmark.py` was already updated**: `MODELS` is trimmed
+  to just `GTA1-7B` and `UI-TARS-1.5-7B` (Qwen control dropped, per plan).
+  `TASKS` was deliberately **left unchanged** (still the old proven
+  2-image/6-task set) rather than guessed from filenames — see the
+  `# TODO(session 3)` comment right above `TASKS` in the script for the
+  full list of 15 filenames still needing real instructions.
+- **The user ran `select_diverse_screenshots.py` locally** against their
+  real `Ableton_screenshots/` folder (not the synthetic test set) and got a
+  15-image shortlist:
+  ```
+  01_browser-and-device-view-collapsed.png
+  02_browser-sounds-tab.png
+  04_browser-plugins-tab.png
+  05_device-view-empty-midi-track.png
+  05_view-menu.png
+  06_navigate-menu.png
+  07_device-view-instrument-rack-chains.png
+  07_options-menu.png
+  08_help-menu.png
+  12_automation-lane-breakpoint-envelope.png
+  14_locators-timeline-markers.png
+  23_device-chain-3-stacked-devices.png
+  26_return-track-send-knob.png
+  29_settings-audio-tab.png
+  32_save-copy-dialog.png
+  ```
+  This is a genuinely diverse-looking set (browser tabs, device views, 3
+  more menus, automation, locators, a dialog) — the dedup step appears to
+  have worked as intended on the real folder, though this wasn't
+  independently re-verified (no direct visual check was done in this
+  session, only the CSV report the user would have generated locally).
+- **The user has pushed these 15 screenshots to GitHub** (the same repo
+  used earlier in this project — `akbargherbal/gui_grounding_benchmark`)
+  but explicitly asked NOT to start working on them yet in this session,
+  just to record the handoff. **I have not cloned/viewed them.**
+- The plan (unchanged from the "Next session plan" section above) was to
+  view each of these 15 images directly before writing instructions —
+  guessing from filenames risks wasting a Colab run on an instruction that
+  doesn't match what's actually on screen. That viewing step is what got
+  cut off.
+
+### First things to do next session
+
+1. `git clone` (or `git pull` if the repo's already local) the
+   `akbargherbal/gui_grounding_benchmark` repo to pick up the newly-pushed
+   screenshots — check whether the user put them in `screenshots/`,
+   `shortlisted_screenshots/`, or somewhere else; the exact path wasn't
+   confirmed before the session ended.
+2. View all 15 images directly (not just filenames) and write 1-2 grounded
+   instructions per image for the `TASKS` list, the same way the original
+   2-image/6-task set was written — favor exact visible text
+   ("Click 'X' in the Y menu") over vague/guessed element descriptions.
+3. Fill in `gui_grounding_benchmark.py`'s `TASKS` (currently still the old
+   placeholder set) and remove the `# TODO(session 3)` comment once done.
+4. Hand back the finished script for the user to run in Colab, then repeat
+   the same evaluation approach used in session 2: open every annotated
+   PNG and visually verify GTA1 vs UI-TARS rather than trusting raw
+   coordinates, and update `report.md` + this file with the findings.
