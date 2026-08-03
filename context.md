@@ -357,3 +357,42 @@ double check before trusting the repo's `gui_grounding_benchmark.py`.**
    images directly as message attachments (a different path than the `view`
    tool, not subject to the same cap) or note precisely which images are
    still unviewed and hand off cleanly the same way this session did.
+
+---
+
+## Session 5 (finished the TASKS list — all 15 images, 30 tasks)
+
+Confirmed on clone that the session-4 script had landed correctly on GitHub
+(no discrepancy this time): `MODELS` had only GTA1-7B/UI-TARS-1.5-7B, and
+the `# TODO(session 4)` comment was present exactly as expected, listing
+the same 5 unviewed filenames.
+
+Viewed all 5 remaining images directly (no image-view limit hit this
+session) and added 2 grounded instructions each: `14_locators-timeline-markers`,
+`23_device-chain-3-stacked-devices`, `26_return-track-send-knob`,
+`29_settings-audio-tab`, `32_save-copy-dialog`. Removed the TODO comment.
+`TASKS` now has all 30 entries (2 per image × 15 images) and the script
+parses cleanly (`ast.parse` + a task/image count check, both passed).
+
+**Not yet done / caveat for next session:** the 10 new instructions were
+written from direct viewing but favor structurally-obvious elements (e.g.
+"the loop brace," "the middle device's title bar," "the Send knob") over
+guessing exact custom text where the UI showed user-editable/ambiguous
+labels (e.g. custom locator names, custom chain names) — same caution as
+prior sessions about not inventing text that might not exactly match. If a
+Colab run shows these instructions map to the wrong element, that's the
+first thing to revisit before blaming the model.
+
+### First things to do next session
+
+1. Hand the finished script to the user to run in Colab (all 15 images / 30
+   tasks, GTA1-7B + UI-TARS-1.5-7B only — Qwen control already dropped).
+2. Same evaluation approach as sessions 2 onward: open every annotated PNG
+   and visually verify GTA1 vs UI-TARS rather than trusting raw
+   coordinates.
+3. Update `gui_grounding_results/report.md` and this file with the findings
+   from the 30-task run — first full-scale comparison between the two
+   specialists on this shortlist.
+4. If any of the 10 new instructions from this session turn out to be
+   ambiguous or mismatched (see caveat above), revise the wording in
+   `TASKS` before re-running, rather than assuming the model was wrong.

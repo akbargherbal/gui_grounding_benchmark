@@ -142,13 +142,6 @@ MAX_NEW_TOKENS = 64
 
 # Each task = one screenshot + one natural-language grounding instruction.
 # Add/remove/edit freely. Filenames must exist inside SCREENSHOTS_DIR.
-# TODO(session 4): 5 of the 15 shortlisted images still need instructions --
-# 14_locators-timeline-markers, 23_device-chain-3-stacked-devices,
-# 26_return-track-send-knob, 29_settings-audio-tab, 32_save-copy-dialog.
-# These were NOT viewed directly yet (an image-rendering limit was hit
-# mid-session after 10 successful views) -- do not guess instructions for
-# them from filenames alone, view each one first the same way the 10 below
-# were done.
 TASKS = [
     # -- 01_browser-and-device-view-collapsed.png --
     {
@@ -239,6 +232,51 @@ TASKS = [
     {
         "image": "12_automation-lane-breakpoint-envelope.png",
         "instruction": "Click the 'Reverse' button in the clip's Sample panel",
+    },
+    # -- 14_locators-timeline-markers.png --
+    {
+        "image": "14_locators-timeline-markers.png",
+        "instruction": "Click the loop brace region below the timeline ruler",
+    },
+    {
+        "image": "14_locators-timeline-markers.png",
+        "instruction": "Click a locator marker flag on the timeline ruler",
+    },
+    # -- 23_device-chain-3-stacked-devices.png --
+    {
+        "image": "23_device-chain-3-stacked-devices.png",
+        "instruction": "Click the second chain's title in the Chain List panel",
+    },
+    {
+        "image": "23_device-chain-3-stacked-devices.png",
+        "instruction": "Click the title bar of the middle device in the stacked chain",
+    },
+    # -- 26_return-track-send-knob.png --
+    {
+        "image": "26_return-track-send-knob.png",
+        "instruction": "Click the Send knob on the track strip that routes to the return",
+    },
+    {
+        "image": "26_return-track-send-knob.png",
+        "instruction": "Click the return track's name at the top of its mixer strip",
+    },
+    # -- 29_settings-audio-tab.png --
+    {
+        "image": "29_settings-audio-tab.png",
+        "instruction": "Click the 'Audio Output Device' dropdown in the Audio tab",
+    },
+    {
+        "image": "29_settings-audio-tab.png",
+        "instruction": "Click the 'Input Config...' button in the Audio tab",
+    },
+    # -- 32_save-copy-dialog.png --
+    {
+        "image": "32_save-copy-dialog.png",
+        "instruction": "Click the 'Save' button in the dialog",
+    },
+    {
+        "image": "32_save-copy-dialog.png",
+        "instruction": "Click the 'Collect All and Save' checkbox",
     },
 ]
 
