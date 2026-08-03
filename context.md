@@ -280,3 +280,80 @@ through. Status as of the cutoff:
    the same evaluation approach used in session 2: open every annotated
    PNG and visually verify GTA1 vs UI-TARS rather than trusting raw
    coordinates, and update `report.md` + this file with the findings.
+
+---
+
+## Session 4 (cut short again — hit an image-view limit, not a token limit)
+
+Confirmed the 15 screenshots from the session-3 handoff are live in the repo
+at `shortlisted_screenshots/` (not `screenshots/` — that older folder still
+only has the original 2 test images). One of the 15,
+`02_browser-sounds-tab.png`, is byte-identical (md5-checked) to the original
+`screenshots/02_browser-sounds-tab.png`, confirming it's the same file
+carried through, not a new capture.
+
+**Discrepancy found and resolved:** the `gui_grounding_benchmark.py` pushed
+to GitHub at the start of this session was missing the `# TODO(session 3)`
+comment and still had `Qwen2.5-VL-7B-Instruct` in `MODELS` (i.e. it was an
+older/incomplete copy). The user then uploaded the actual latest script
+directly, which *did* have `MODELS` correctly trimmed to just `GTA1-7B` and
+`UI-TARS-1.5-7B` and *did* have the TODO comment. That uploaded version was
+used as the base for this session's edits and is what should be on GitHub
+now (the user said they'd push it after this session). **If a future
+session finds `MODELS` still includes Qwen or the TODO comment references
+"session 3" instead of "session 4," the wrong/stale copy got pushed —
+double check before trusting the repo's `gui_grounding_benchmark.py`.**
+
+**Progress this session:**
+- `SCREENSHOTS_DIR` updated from `./screenshots` to `./shortlisted_screenshots`.
+- Directly viewed 10 of the 15 shortlisted images and wrote 2 grounded
+  instructions each (20 `TASKS` entries total) for: `01_browser-and-device-view-collapsed`,
+  `02_browser-sounds-tab`, `04_browser-plugins-tab`, `05_device-view-empty-midi-track`,
+  `05_view-menu`, `06_navigate-menu`, `07_device-view-instrument-rack-chains`,
+  `07_options-menu`, `08_help-menu`, `12_automation-lane-breakpoint-envelope`.
+  Instructions favor exact visible text per the session-3 plan (e.g. "Click
+  'Mixer' in the View menu", "Click the Solo (S) button on track '5 MIDI'").
+- **Hit a hard per-conversation image-view limit (10 successful `view` calls)
+  partway through.** The remaining 5 images —
+  `14_locators-timeline-markers.png`, `23_device-chain-3-stacked-devices.png`,
+  `26_return-track-send-knob.png`, `29_settings-audio-tab.png`,
+  `32_save-copy-dialog.png` — could not be viewed for the rest of the
+  session. Confirmed this was a session-wide cap, not a problem with those
+  specific files: re-tried one of them after resizing it smaller and after
+  converting to a fresh PNG copy, both attempts returned empty; a file
+  already viewed earlier in the same session (`02_browser-sounds-tab.png`)
+  also failed to re-render once the limit was hit. All 5 files themselves
+  are confirmed valid (checked with `file`, correct PNG headers, normal
+  1936x1048 dimensions).
+- **Did not guess instructions for those 5 from filenames** — consistent
+  with the caution already noted in session 3's handoff. A
+  `# TODO(session 4)` comment in `gui_grounding_benchmark.py` marks exactly
+  this, right above `TASKS`.
+- The user is pushing this session's updated `gui_grounding_benchmark.py` to
+  GitHub and starting a fresh chat next, specifically so the next session
+  gets a full image-view budget to finish the remaining 5.
+
+### First things to do next session
+
+1. `git pull`/`git clone` to confirm the script pushed at the end of this
+   session actually landed (see the discrepancy warning above — verify
+   `MODELS` has only GTA1-7B/UI-TARS-1.5-7B and the TODO comment says
+   "session 4" before trusting it; if it looks like the *session-3* version
+   again, ask the user to re-upload the file directly rather than trusting
+   the repo).
+2. View the 5 remaining images directly: `14_locators-timeline-markers.png`,
+   `23_device-chain-3-stacked-devices.png`, `26_return-track-send-knob.png`,
+   `29_settings-audio-tab.png`, `32_save-copy-dialog.png`. Write 1-2 grounded
+   instructions per image, same style as the 20 already in `TASKS`
+   (exact visible text, no guessing from filenames).
+3. Remove the `# TODO(session 4)` comment once all 5 are filled in — at that
+   point all 15 images / ~30 tasks are ready for a Colab run.
+4. Hand back the finished script, then repeat the session-2 evaluation
+   approach: open every annotated PNG and visually verify GTA1 vs UI-TARS
+   rather than trusting raw coordinates, and update `report.md` + this file
+   with the findings.
+5. If the image-view limit is hit again partway through step 2, don't burn
+   turns retrying blindly — either ask the user to paste the remaining
+   images directly as message attachments (a different path than the `view`
+   tool, not subject to the same cap) or note precisely which images are
+   still unviewed and hand off cleanly the same way this session did.

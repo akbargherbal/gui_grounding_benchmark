@@ -135,43 +135,114 @@ def setup_hf_token():
 # 0. Config -- EDIT THIS SECTION for your own screenshots / instructions
 # ---------------------------------------------------------------------------
 
-SCREENSHOTS_DIR = Path("./screenshots")  # put your .png/.jpg files here
+SCREENSHOTS_DIR = Path("./shortlisted_screenshots")  # 15-image diverse shortlist
 OUTPUT_DIR = Path("./gui_grounding_results")
 ANNOTATED_DIR = OUTPUT_DIR / "annotated"
 MAX_NEW_TOKENS = 64
 
 # Each task = one screenshot + one natural-language grounding instruction.
 # Add/remove/edit freely. Filenames must exist inside SCREENSHOTS_DIR.
+# TODO(session 4): 5 of the 15 shortlisted images still need instructions --
+# 14_locators-timeline-markers, 23_device-chain-3-stacked-devices,
+# 26_return-track-send-knob, 29_settings-audio-tab, 32_save-copy-dialog.
+# These were NOT viewed directly yet (an image-rendering limit was hit
+# mid-session after 10 successful views) -- do not guess instructions for
+# them from filenames alone, view each one first the same way the 10 below
+# were done.
 TASKS = [
+    # -- 01_browser-and-device-view-collapsed.png --
+    {
+        "image": "01_browser-and-device-view-collapsed.png",
+        "instruction": "Click the Solo (S) button on track '4 Audio'",
+    },
+    {
+        "image": "01_browser-and-device-view-collapsed.png",
+        "instruction": "Click the 'Cue Out' dropdown in the Main return track strip",
+    },
+    # -- 02_browser-sounds-tab.png --
     {
         "image": "02_browser-sounds-tab.png",
         "instruction": "Click the 'Sounds' item in the left sidebar under Library",
     },
     {
         "image": "02_browser-sounds-tab.png",
-        "instruction": "Click the Solo (S) button on the '4 Audio' track",
+        "instruction": "Click '5ths Detuned Pad.adv' in the browser file list",
+    },
+    # -- 04_browser-plugins-tab.png --
+    {
+        "image": "04_browser-plugins-tab.png",
+        "instruction": "Click 'Plug-Ins' in the Library section of the browser sidebar",
     },
     {
-        "image": "02_browser-sounds-tab.png",
-        "instruction": "Click the 'Edit' button in the Filters bar of the browser",
+        "image": "04_browser-plugins-tab.png",
+        "instruction": "Click 'Instruments' in the Library section of the browser sidebar",
     },
-    {"image": "02_edit-menu.png", "instruction": "Click 'Group' in the Edit menu"},
+    # -- 05_device-view-empty-midi-track.png --
     {
-        "image": "02_edit-menu.png",
-        "instruction": "Click 'Freeze Track' in the Edit menu",
+        "image": "05_device-view-empty-midi-track.png",
+        "instruction": "Click the Solo (S) button on track '5 MIDI'",
     },
     {
-        "image": "02_edit-menu.png",
-        "instruction": "Click 'Consolidate' in the Edit menu",
+        "image": "05_device-view-empty-midi-track.png",
+        "instruction": "Click the 'MIDI From' dropdown for track '5 MIDI'",
+    },
+    # -- 05_view-menu.png --
+    {
+        "image": "05_view-menu.png",
+        "instruction": "Click 'Mixer' in the View menu",
+    },
+    {
+        "image": "05_view-menu.png",
+        "instruction": "Click 'Groove Pool' in the View menu",
+    },
+    # -- 06_navigate-menu.png --
+    {
+        "image": "06_navigate-menu.png",
+        "instruction": "Click 'Device View' in the Navigate menu",
+    },
+    {
+        "image": "06_navigate-menu.png",
+        "instruction": "Click 'Help View' in the Navigate menu",
+    },
+    # -- 07_device-view-instrument-rack-chains.png --
+    {
+        "image": "07_device-view-instrument-rack-chains.png",
+        "instruction": "Click the 'Crush' chain title in the instrument rack",
+    },
+    {
+        "image": "07_device-view-instrument-rack-chains.png",
+        "instruction": "Click the 'Hide' button in the instrument rack header",
+    },
+    # -- 07_options-menu.png --
+    {
+        "image": "07_options-menu.png",
+        "instruction": "Click 'Computer MIDI Keyboard' in the Options menu",
+    },
+    {
+        "image": "07_options-menu.png",
+        "instruction": "Click 'Settings...' at the bottom of the Options menu",
+    },
+    # -- 08_help-menu.png --
+    {
+        "image": "08_help-menu.png",
+        "instruction": "Click 'Load Demo Set' in the Help menu",
+    },
+    {
+        "image": "08_help-menu.png",
+        "instruction": "Click 'Check for Updates...' in the Help menu",
+    },
+    # -- 12_automation-lane-breakpoint-envelope.png --
+    {
+        "image": "12_automation-lane-breakpoint-envelope.png",
+        "instruction": "Click the breakpoint node on the panning automation envelope in the '3 ui_survey' track",
+    },
+    {
+        "image": "12_automation-lane-breakpoint-envelope.png",
+        "instruction": "Click the 'Reverse' button in the clip's Sample panel",
     },
 ]
 
 MODELS = [
-    {
-        "name": "Qwen2.5-VL-7B-Instruct",
-        "repo": "Qwen/Qwen2.5-VL-7B-Instruct",
-        "kind": "generic_vlm",
-    },
     {"name": "GTA1-7B", "repo": "HelloKKMe/GTA1-7B", "kind": "gta1"},
     {
         "name": "UI-TARS-1.5-7B",
