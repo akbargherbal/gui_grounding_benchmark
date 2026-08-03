@@ -1,72 +1,27 @@
 [
   {
-    "model": "Qwen2.5-VL-7B-Instruct",
-    "image": "02_browser-sounds-tab.png",
-    "instruction": "Click the 'Sounds' item in the left sidebar under Library",
-    "raw_text": "[10,265,134,287]",
-    "xy": null,
-    "latency_sec": 3.79,
-    "annotated_path": "gui_grounding_results/annotated/Qwen2.5-VL-7B-Instruct__task0__02_browser-sounds-tab.png"
+    "model": "GTA1-7B",
+    "image": "01_browser-and-device-view-collapsed.png",
+    "instruction": "Click the Solo (S) button on track '4 Audio'",
+    "raw_text": "(384,941)",
+    "xy": [
+      384.7950310559006,
+      951.8996138996139
+    ],
+    "latency_sec": 4.94,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task0__01_browser-and-device-view-collapsed.png"
   },
   {
-    "model": "Qwen2.5-VL-7B-Instruct",
-    "image": "02_browser-sounds-tab.png",
-    "instruction": "Click the Solo (S) button on the '4 Audio' track",
-    "raw_text": "(1580,923), (1607,923)",
+    "model": "GTA1-7B",
+    "image": "01_browser-and-device-view-collapsed.png",
+    "instruction": "Click the 'Cue Out' dropdown in the Main return track strip",
+    "raw_text": "(1899,719)",
     "xy": [
-      1580.0,
-      923.0
+      1902.9316770186335,
+      727.3281853281853
     ],
-    "latency_sec": 2.92,
-    "annotated_path": "gui_grounding_results/annotated/Qwen2.5-VL-7B-Instruct__task1__02_browser-sounds-tab.png"
-  },
-  {
-    "model": "Qwen2.5-VL-7B-Instruct",
-    "image": "02_browser-sounds-tab.png",
-    "instruction": "Click the 'Edit' button in the Filters bar of the browser",
-    "raw_text": "(280,157)",
-    "xy": [
-      280.0,
-      157.0
-    ],
-    "latency_sec": 2.25,
-    "annotated_path": "gui_grounding_results/annotated/Qwen2.5-VL-7B-Instruct__task2__02_browser-sounds-tab.png"
-  },
-  {
-    "model": "Qwen2.5-VL-7B-Instruct",
-    "image": "02_edit-menu.png",
-    "instruction": "Click 'Group' in the Edit menu",
-    "raw_text": "[105,264]",
-    "xy": [
-      105.0,
-      264.0
-    ],
-    "latency_sec": 2.25,
-    "annotated_path": "gui_grounding_results/annotated/Qwen2.5-VL-7B-Instruct__task3__02_edit-menu.png"
-  },
-  {
-    "model": "Qwen2.5-VL-7B-Instruct",
-    "image": "02_edit-menu.png",
-    "instruction": "Click 'Freeze Track' in the Edit menu",
-    "raw_text": "[102,345]",
-    "xy": [
-      102.0,
-      345.0
-    ],
-    "latency_sec": 2.26,
-    "annotated_path": "gui_grounding_results/annotated/Qwen2.5-VL-7B-Instruct__task4__02_edit-menu.png"
-  },
-  {
-    "model": "Qwen2.5-VL-7B-Instruct",
-    "image": "02_edit-menu.png",
-    "instruction": "Click 'Consolidate' in the Edit menu",
-    "raw_text": "[102,348]",
-    "xy": [
-      102.0,
-      348.0
-    ],
-    "latency_sec": 2.24,
-    "annotated_path": "gui_grounding_results/annotated/Qwen2.5-VL-7B-Instruct__task5__02_edit-menu.png"
+    "latency_sec": 2.46,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task1__01_browser-and-device-view-collapsed.png"
   },
   {
     "model": "GTA1-7B",
@@ -77,68 +32,356 @@
       158.3271221532091,
       276.16216216216213
     ],
-    "latency_sec": 2.53,
-    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task0__02_browser-sounds-tab.png"
-  },
-  {
-    "model": "GTA1-7B",
-    "image": "02_browser-sounds-tab.png",
-    "instruction": "Click the Solo (S) button on the '4 Audio' track",
-    "raw_text": "(1846,920)",
-    "xy": [
-      1849.8219461697724,
-      930.6563706563707
-    ],
-    "latency_sec": 2.5,
-    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task1__02_browser-sounds-tab.png"
-  },
-  {
-    "model": "GTA1-7B",
-    "image": "02_browser-sounds-tab.png",
-    "instruction": "Click the 'Edit' button in the Filters bar of the browser",
-    "raw_text": "(616,162)",
-    "xy": [
-      617.2753623188406,
-      163.87644787644788
-    ],
-    "latency_sec": 2.43,
+    "latency_sec": 2.38,
     "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task2__02_browser-sounds-tab.png"
   },
   {
     "model": "GTA1-7B",
-    "image": "02_edit-menu.png",
-    "instruction": "Click 'Group' in the Edit menu",
-    "raw_text": "(168,476)",
+    "image": "02_browser-sounds-tab.png",
+    "instruction": "Click '5ths Detuned Pad.adv' in the browser file list",
+    "raw_text": "(475,361)",
     "xy": [
-      168.34782608695653,
-      481.5135135135135
+      475.9834368530021,
+      365.18146718146716
+    ],
+    "latency_sec": 2.38,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task3__02_browser-sounds-tab.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "04_browser-plugins-tab.png",
+    "instruction": "Click 'Plug-Ins' in the Library section of the browser sidebar",
+    "raw_text": "(154,429)",
+    "xy": [
+      154.31884057971016,
+      433.96911196911196
+    ],
+    "latency_sec": 2.4,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task4__04_browser-plugins-tab.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "04_browser-plugins-tab.png",
+    "instruction": "Click 'Instruments' in the Library section of the browser sidebar",
+    "raw_text": "(74,318)",
+    "xy": [
+      74.15320910973085,
+      321.6833976833977
+    ],
+    "latency_sec": 2.35,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task5__04_browser-plugins-tab.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "05_device-view-empty-midi-track.png",
+    "instruction": "Click the Solo (S) button on track '5 MIDI'",
+    "raw_text": "(1819,690)",
+    "xy": [
+      1822.7660455486543,
+      697.992277992278
+    ],
+    "latency_sec": 2.46,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task6__05_device-view-empty-midi-track.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "05_device-view-empty-midi-track.png",
+    "instruction": "Click the 'MIDI From' dropdown for track '5 MIDI'",
+    "raw_text": "(1148,411)",
+    "xy": [
+      1150.376811594203,
+      415.7606177606178
+    ],
+    "latency_sec": 2.47,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task7__05_device-view-empty-midi-track.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "05_view-menu.png",
+    "instruction": "Click 'Mixer' in the View menu",
+    "raw_text": "(380,628)",
+    "xy": [
+      380.78674948240166,
+      635.2741312741313
+    ],
+    "latency_sec": 2.41,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task8__05_view-menu.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "05_view-menu.png",
+    "instruction": "Click 'Groove Pool' in the View menu",
+    "raw_text": "(422,324)",
+    "xy": [
+      422.8737060041408,
+      327.75289575289577
+    ],
+    "latency_sec": 2.41,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task9__05_view-menu.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "06_navigate-menu.png",
+    "instruction": "Click 'Device View' in the Navigate menu",
+    "raw_text": "(421,231)",
+    "xy": [
+      421.8716356107661,
+      233.67567567567568
     ],
     "latency_sec": 2.43,
-    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task3__02_edit-menu.png"
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task10__06_navigate-menu.png"
   },
   {
     "model": "GTA1-7B",
-    "image": "02_edit-menu.png",
-    "instruction": "Click 'Freeze Track' in the Edit menu",
-    "raw_text": "(197,882)",
+    "image": "06_navigate-menu.png",
+    "instruction": "Click 'Help View' in the Navigate menu",
+    "raw_text": "(414,331)",
     "xy": [
-      197.40786749482402,
-      892.2162162162161
+      414.8571428571429,
+      334.8339768339768
     ],
-    "latency_sec": 2.42,
-    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task4__02_edit-menu.png"
+    "latency_sec": 2.43,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task11__06_navigate-menu.png"
   },
   {
     "model": "GTA1-7B",
-    "image": "02_edit-menu.png",
-    "instruction": "Click 'Consolidate' in the Edit menu",
-    "raw_text": "(193,992)",
+    "image": "07_device-view-instrument-rack-chains.png",
+    "instruction": "Click the 'Crush' chain title in the instrument rack",
+    "raw_text": "(424,801)",
     "xy": [
-      193.39958592132507,
-      1003.4903474903475
+      424.87784679089026,
+      810.2779922779922
     ],
-    "latency_sec": 2.42,
-    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task5__02_edit-menu.png"
+    "latency_sec": 2.43,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task12__07_device-view-instrument-rack-chains.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "07_device-view-instrument-rack-chains.png",
+    "instruction": "Click the 'Hide' button in the instrument rack header",
+    "raw_text": "(719,803)",
+    "xy": [
+      720.488612836439,
+      812.3011583011582
+    ],
+    "latency_sec": 2.46,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task13__07_device-view-instrument-rack-chains.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "07_options-menu.png",
+    "instruction": "Click 'Computer MIDI Keyboard' in the Options menu",
+    "raw_text": "(682,105)",
+    "xy": [
+      683.4120082815735,
+      106.21621621621621
+    ],
+    "latency_sec": 2.44,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task14__07_options-menu.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "07_options-menu.png",
+    "instruction": "Click 'Settings...' at the bottom of the Options menu",
+    "raw_text": "(593,1024)",
+    "xy": [
+      594.2277432712216,
+      1035.8610038610038
+    ],
+    "latency_sec": 2.5,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task15__07_options-menu.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "08_help-menu.png",
+    "instruction": "Click 'Load Demo Set' in the Help menu",
+    "raw_text": "(634,131)",
+    "xy": [
+      635.312629399586,
+      132.51737451737452
+    ],
+    "latency_sec": 2.46,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task16__08_help-menu.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "08_help-menu.png",
+    "instruction": "Click 'Check for Updates...' in the Help menu",
+    "raw_text": "(643,350)",
+    "xy": [
+      644.3312629399586,
+      354.05405405405406
+    ],
+    "latency_sec": 2.46,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task17__08_help-menu.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "12_automation-lane-breakpoint-envelope.png",
+    "instruction": "Click the breakpoint node on the panning automation envelope in the '3 ui_survey' track",
+    "raw_text": "(1641,449)",
+    "xy": [
+      1644.3975155279504,
+      454.2007722007722
+    ],
+    "latency_sec": 2.52,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task18__12_automation-lane-breakpoint-envelope.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "12_automation-lane-breakpoint-envelope.png",
+    "instruction": "Click the 'Reverse' button in the clip's Sample panel",
+    "raw_text": "(258,948)",
+    "xy": [
+      258.53416149068323,
+      958.9806949806949
+    ],
+    "latency_sec": 2.45,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task19__12_automation-lane-breakpoint-envelope.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "14_locators-timeline-markers.png",
+    "instruction": "Click the loop brace region below the timeline ruler",
+    "raw_text": "(28,185)",
+    "xy": [
+      28.057971014492754,
+      187.14285714285714
+    ],
+    "latency_sec": 2.41,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task20__14_locators-timeline-markers.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "14_locators-timeline-markers.png",
+    "instruction": "Click a locator marker flag on the timeline ruler",
+    "raw_text": "(844,187)",
+    "xy": [
+      845.7474120082816,
+      189.16602316602317
+    ],
+    "latency_sec": 2.49,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task21__14_locators-timeline-markers.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "23_device-chain-3-stacked-devices.png",
+    "instruction": "Click the second chain's title in the Chain List panel",
+    "raw_text": "(306,452)",
+    "xy": [
+      306.63354037267084,
+      457.2355212355212
+    ],
+    "latency_sec": 2.47,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task22__23_device-chain-3-stacked-devices.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "23_device-chain-3-stacked-devices.png",
+    "instruction": "Click the title bar of the middle device in the stacked chain",
+    "raw_text": "(819,128)",
+    "xy": [
+      820.6956521739131,
+      129.48262548262548
+    ],
+    "latency_sec": 2.48,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task23__23_device-chain-3-stacked-devices.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "26_return-track-send-knob.png",
+    "instruction": "Click the Send knob on the track strip that routes to the return",
+    "raw_text": "(1009,653)",
+    "xy": [
+      1011.0890269151139,
+      660.5637065637065
+    ],
+    "latency_sec": 2.55,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task24__26_return-track-send-knob.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "26_return-track-send-knob.png",
+    "instruction": "Click the return track's name at the top of its mixer strip",
+    "raw_text": "(908,132)",
+    "xy": [
+      909.8799171842651,
+      133.52895752895753
+    ],
+    "latency_sec": 2.48,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task25__26_return-track-send-knob.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "29_settings-audio-tab.png",
+    "instruction": "Click the 'Audio Output Device' dropdown in the Audio tab",
+    "raw_text": "(1212,341)",
+    "xy": [
+      1214.5093167701864,
+      344.94980694980694
+    ],
+    "latency_sec": 2.55,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task26__29_settings-audio-tab.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "29_settings-audio-tab.png",
+    "instruction": "Click the 'Input Config...' button in the Audio tab",
+    "raw_text": "(1153,366)",
+    "xy": [
+      1155.3871635610767,
+      370.2393822393822
+    ],
+    "latency_sec": 2.55,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task27__29_settings-audio-tab.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "32_save-copy-dialog.png",
+    "instruction": "Click the 'Save' button in the dialog",
+    "raw_text": "(784,538)",
+    "xy": [
+      785.6231884057971,
+      544.2316602316603
+    ],
+    "latency_sec": 2.51,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task28__32_save-copy-dialog.png"
+  },
+  {
+    "model": "GTA1-7B",
+    "image": "32_save-copy-dialog.png",
+    "instruction": "Click the 'Collect All and Save' checkbox",
+    "raw_text": "(933,65)",
+    "xy": [
+      934.9316770186335,
+      65.75289575289575
+    ],
+    "latency_sec": 2.43,
+    "annotated_path": "gui_grounding_results/annotated/GTA1-7B__task29__32_save-copy-dialog.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "01_browser-and-device-view-collapsed.png",
+    "instruction": "Click the Solo (S) button on track '4 Audio'",
+    "raw_text": "(382,941)",
+    "xy": [
+      382.0,
+      941.0
+    ],
+    "latency_sec": 2.56,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task0__01_browser-and-device-view-collapsed.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "01_browser-and-device-view-collapsed.png",
+    "instruction": "Click the 'Cue Out' dropdown in the Main return track strip",
+    "raw_text": "(1870,719)",
+    "xy": [
+      1870.0,
+      719.0
+    ],
+    "latency_sec": 2.56,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task1__01_browser-and-device-view-collapsed.png"
   },
   {
     "model": "UI-TARS-1.5-7B",
@@ -149,67 +392,331 @@
       158.0,
       273.0
     ],
-    "latency_sec": 2.49,
-    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task0__02_browser-sounds-tab.png"
-  },
-  {
-    "model": "UI-TARS-1.5-7B",
-    "image": "02_browser-sounds-tab.png",
-    "instruction": "Click the Solo (S) button on the '4 Audio' track",
-    "raw_text": "(1846,921)",
-    "xy": [
-      1846.0,
-      921.0
-    ],
     "latency_sec": 2.48,
-    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task1__02_browser-sounds-tab.png"
-  },
-  {
-    "model": "UI-TARS-1.5-7B",
-    "image": "02_browser-sounds-tab.png",
-    "instruction": "Click the 'Edit' button in the Filters bar of the browser",
-    "raw_text": "(606,163)",
-    "xy": [
-      606.0,
-      163.0
-    ],
-    "latency_sec": 2.42,
     "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task2__02_browser-sounds-tab.png"
   },
   {
     "model": "UI-TARS-1.5-7B",
-    "image": "02_edit-menu.png",
-    "instruction": "Click 'Group' in the Edit menu",
-    "raw_text": "(185,476)",
+    "image": "02_browser-sounds-tab.png",
+    "instruction": "Click '5ths Detuned Pad.adv' in the browser file list",
+    "raw_text": "(475,361)",
     "xy": [
-      185.0,
-      476.0
+      475.0,
+      361.0
     ],
-    "latency_sec": 2.41,
-    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task3__02_edit-menu.png"
+    "latency_sec": 2.5,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task3__02_browser-sounds-tab.png"
   },
   {
     "model": "UI-TARS-1.5-7B",
-    "image": "02_edit-menu.png",
-    "instruction": "Click 'Freeze Track' in the Edit menu",
-    "raw_text": "(197,882)",
+    "image": "04_browser-plugins-tab.png",
+    "instruction": "Click 'Plug-Ins' in the Library section of the browser sidebar",
+    "raw_text": "(154,428)",
     "xy": [
-      197.0,
-      882.0
+      154.0,
+      428.0
     ],
-    "latency_sec": 2.42,
-    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task4__02_edit-menu.png"
+    "latency_sec": 2.5,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task4__04_browser-plugins-tab.png"
   },
   {
     "model": "UI-TARS-1.5-7B",
-    "image": "02_edit-menu.png",
-    "instruction": "Click 'Consolidate' in the Edit menu",
-    "raw_text": "(195,991)",
+    "image": "04_browser-plugins-tab.png",
+    "instruction": "Click 'Instruments' in the Library section of the browser sidebar",
+    "raw_text": "(158,318)",
     "xy": [
-      195.0,
-      991.0
+      158.0,
+      318.0
     ],
-    "latency_sec": 2.44,
-    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task5__02_edit-menu.png"
+    "latency_sec": 2.51,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task5__04_browser-plugins-tab.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "05_device-view-empty-midi-track.png",
+    "instruction": "Click the Solo (S) button on track '5 MIDI'",
+    "raw_text": "(1731,711)",
+    "xy": [
+      1731.0,
+      711.0
+    ],
+    "latency_sec": 2.56,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task6__05_device-view-empty-midi-track.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "05_device-view-empty-midi-track.png",
+    "instruction": "Click the 'MIDI From' dropdown for track '5 MIDI'",
+    "raw_text": "(1150,412)",
+    "xy": [
+      1150.0,
+      412.0
+    ],
+    "latency_sec": 2.55,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task7__05_device-view-empty-midi-track.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "05_view-menu.png",
+    "instruction": "Click 'Mixer' in the View menu",
+    "raw_text": "(379,628)",
+    "xy": [
+      379.0,
+      628.0
+    ],
+    "latency_sec": 2.48,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task8__05_view-menu.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "05_view-menu.png",
+    "instruction": "Click 'Groove Pool' in the View menu",
+    "raw_text": "(422,324)",
+    "xy": [
+      422.0,
+      324.0
+    ],
+    "latency_sec": 2.49,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task9__05_view-menu.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "06_navigate-menu.png",
+    "instruction": "Click 'Device View' in the Navigate menu",
+    "raw_text": "(422,231)",
+    "xy": [
+      422.0,
+      231.0
+    ],
+    "latency_sec": 2.47,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task10__06_navigate-menu.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "06_navigate-menu.png",
+    "instruction": "Click 'Help View' in the Navigate menu",
+    "raw_text": "(414,331)",
+    "xy": [
+      414.0,
+      331.0
+    ],
+    "latency_sec": 2.47,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task11__06_navigate-menu.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "07_device-view-instrument-rack-chains.png",
+    "instruction": "Click the 'Crush' chain title in the instrument rack",
+    "raw_text": "(424,801)",
+    "xy": [
+      424.0,
+      801.0
+    ],
+    "latency_sec": 2.49,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task12__07_device-view-instrument-rack-chains.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "07_device-view-instrument-rack-chains.png",
+    "instruction": "Click the 'Hide' button in the instrument rack header",
+    "raw_text": "(719,804)",
+    "xy": [
+      719.0,
+      804.0
+    ],
+    "latency_sec": 2.46,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task13__07_device-view-instrument-rack-chains.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "07_options-menu.png",
+    "instruction": "Click 'Computer MIDI Keyboard' in the Options menu",
+    "raw_text": "(668,105)",
+    "xy": [
+      668.0,
+      105.0
+    ],
+    "latency_sec": 2.47,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task14__07_options-menu.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "07_options-menu.png",
+    "instruction": "Click 'Settings...' at the bottom of the Options menu",
+    "raw_text": "(593,1024)",
+    "xy": [
+      593.0,
+      1024.0
+    ],
+    "latency_sec": 2.51,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task15__07_options-menu.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "08_help-menu.png",
+    "instruction": "Click 'Load Demo Set' in the Help menu",
+    "raw_text": "(619,131)",
+    "xy": [
+      619.0,
+      131.0
+    ],
+    "latency_sec": 2.45,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task16__08_help-menu.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "08_help-menu.png",
+    "instruction": "Click 'Check for Updates...' in the Help menu",
+    "raw_text": "(628,349)",
+    "xy": [
+      628.0,
+      349.0
+    ],
+    "latency_sec": 2.45,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task17__08_help-menu.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "12_automation-lane-breakpoint-envelope.png",
+    "instruction": "Click the breakpoint node on the panning automation envelope in the '3 ui_survey' track",
+    "raw_text": "(1671,449)",
+    "xy": [
+      1671.0,
+      449.0
+    ],
+    "latency_sec": 2.52,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task18__12_automation-lane-breakpoint-envelope.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "12_automation-lane-breakpoint-envelope.png",
+    "instruction": "Click the 'Reverse' button in the clip's Sample panel",
+    "raw_text": "(258,948)",
+    "xy": [
+      258.0,
+      948.0
+    ],
+    "latency_sec": 2.45,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task19__12_automation-lane-breakpoint-envelope.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "14_locators-timeline-markers.png",
+    "instruction": "Click the loop brace region below the timeline ruler",
+    "raw_text": "(84,171)",
+    "xy": [
+      84.0,
+      171.0
+    ],
+    "latency_sec": 2.38,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task20__14_locators-timeline-markers.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "14_locators-timeline-markers.png",
+    "instruction": "Click a locator marker flag on the timeline ruler",
+    "raw_text": "(102,160)",
+    "xy": [
+      102.0,
+      160.0
+    ],
+    "latency_sec": 2.45,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task21__14_locators-timeline-markers.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "23_device-chain-3-stacked-devices.png",
+    "instruction": "Click the second chain's title in the Chain List panel",
+    "raw_text": "(788,128)",
+    "xy": [
+      788.0,
+      128.0
+    ],
+    "latency_sec": 2.45,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task22__23_device-chain-3-stacked-devices.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "23_device-chain-3-stacked-devices.png",
+    "instruction": "Click the title bar of the middle device in the stacked chain",
+    "raw_text": "(900,412)",
+    "xy": [
+      900.0,
+      412.0
+    ],
+    "latency_sec": 2.45,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task23__23_device-chain-3-stacked-devices.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "26_return-track-send-knob.png",
+    "instruction": "Click the Send knob on the track strip that routes to the return",
+    "raw_text": "(1042,577)",
+    "xy": [
+      1042.0,
+      577.0
+    ],
+    "latency_sec": 2.5,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task24__26_return-track-send-knob.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "26_return-track-send-knob.png",
+    "instruction": "Click the return track's name at the top of its mixer strip",
+    "raw_text": "(1037,128)",
+    "xy": [
+      1037.0,
+      128.0
+    ],
+    "latency_sec": 2.51,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task25__26_return-track-send-knob.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "29_settings-audio-tab.png",
+    "instruction": "Click the 'Audio Output Device' dropdown in the Audio tab",
+    "raw_text": "(1211,340)",
+    "xy": [
+      1211.0,
+      340.0
+    ],
+    "latency_sec": 2.52,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task26__29_settings-audio-tab.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "29_settings-audio-tab.png",
+    "instruction": "Click the 'Input Config...' button in the Audio tab",
+    "raw_text": "(1155,366)",
+    "xy": [
+      1155.0,
+      366.0
+    ],
+    "latency_sec": 2.52,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task27__29_settings-audio-tab.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "32_save-copy-dialog.png",
+    "instruction": "Click the 'Save' button in the dialog",
+    "raw_text": "(784,537)",
+    "xy": [
+      784.0,
+      537.0
+    ],
+    "latency_sec": 2.45,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task28__32_save-copy-dialog.png"
+  },
+  {
+    "model": "UI-TARS-1.5-7B",
+    "image": "32_save-copy-dialog.png",
+    "instruction": "Click the 'Collect All and Save' checkbox",
+    "raw_text": "(102,1006)",
+    "xy": [
+      102.0,
+      1006.0
+    ],
+    "latency_sec": 2.5,
+    "annotated_path": "gui_grounding_results/annotated/UI-TARS-1.5-7B__task29__32_save-copy-dialog.png"
   }
 ]
