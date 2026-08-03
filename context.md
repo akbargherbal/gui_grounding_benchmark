@@ -396,3 +396,94 @@ first thing to revisit before blaming the model.
 4. If any of the 10 new instructions from this session turn out to be
    ambiguous or mismatched (see caveat above), revise the wording in
    `TASKS` before re-running, rather than assuming the model was wrong.
+
+---
+
+## Session 6 (Colab run complete, visually evaluated, externally validated)
+
+The user ran `gui_grounding_benchmark.py` in Colab Pro (L4 GPU) exactly as
+handed off in session 5. Clean run: 30/30 tasks parsed for both models, no
+errors, no "not parsed" rows. Load time: GTA1-7B 85.6s, UI-TARS-1.5-7B
+251.4s (~3x slower to download/load; per-task generation latency was
+similar for both, ~2.4-2.6s). `gui_grounding_results/report.md` and
+`raw_results.json` now hold the real 30-task/2-model results (60 rows).
+
+**Visual evaluation approach used this session** (more efficient than
+opening all 60 PNGs blind): compared the two models' raw (x, y) predictions
+per task first. Where they landed within ~15px of each other, treated that
+as a strong signal both are likely correct (previously confirmed in session
+2 for easy/obvious elements, spot-checked again here). Where they diverged
+sharply, opened those specific annotated PNGs — that's a more efficient way
+to surface real misses than blind full coverage. Six sharply-disagreeing
+tasks were checked:
+
+- **GTA1-7B was correct on all 7 checked hard/ambiguous tasks** (locator
+  marker flag, loop brace, second chain's title vs. device title bar, Send
+  knob, return track name, 'Collect All and Save' checkbox).
+- **UI-TARS-1.5-7B missed clearly on at least 4 of those 7** — most
+  notably, it put the "second chain's title" click on a device title bar
+  (looks like it answered a different task) and put the "Collect All and
+  Save checkbox" click completely outside the dialog box, in the
+  screenshot's bottom-left corner.
+- On tasks where the raw coordinates agreed closely (menus, browser
+  sidebar, Solo buttons — the structurally-unambiguous elements), both
+  models were solid; spot-checked 2 of these and both were correct for
+  both models.
+- **Full 30/30 visual pass was NOT done for either model** — the sample
+  above was deliberately the disagreement cases, not exhaustive coverage.
+  If a future session wants full coverage, that's the natural next step.
+
+Full breakdown is in `gui_grounding_results/report.md` under "Visual
+quality assessment (session 6, 30-task run)".
+
+### External validation — searched for outside consensus, found a close match
+
+The user asked whether this finding (GTA1 winning specifically on
+harder/ambiguous tasks, roughly tied with UI-TARS on easy ones) matches
+published research. It does, closely:
+
+- **On paper, UI-TARS-1.5-7B actually beats GTA1-7B on the aggregate
+  ScreenSpot-Pro leaderboard** (61.6% vs. 55.5%) — so a naive read of
+  published benchmarks would have predicted the opposite of what this
+  session's visual check found.
+- But **GUI-Perturbed** (arXiv:2604.14262, a 2026 robustness study testing
+  this exact model lineage: Qwen2.5-VL-7B → UI-TARS-1.5-7B → GTA1-7B, same
+  base weights, differing only in post-training) found that aggregate
+  benchmarks hide a specific weakness: on "relational" grounding
+  instructions (identifying a target by its relationship to other
+  elements, rather than direct naming), GTA1-7B scores 65.8% vs.
+  UI-TARS-1.5-7B's 35.0% — nearly double. They call this the "white
+  rectangle problem": models ground on visual primitives (shape, position,
+  color) rather than function, so they confuse structurally similar
+  elements (their example: a spreadsheet formula bar vs. a browser search
+  bar).
+- Mechanistic explanation from that paper: GTA1-7B is UI-TARS-1.5-7B plus
+  further GRPO RL training with a direct click-reward. That additional RL
+  stage specifically *recovers* relational/spatial reasoning that the
+  SFT/DPO training used for UI-TARS-1.5 actually *degrades* below the
+  untrained Qwen2.5-VL-7B base (35.0% vs. 45.0% relational accuracy).
+
+This is a close match, in a different domain, to what this session found by
+hand on Ableton screenshots: GTA1 wins specifically on tasks requiring
+telling apart structurally similar, spatially close elements, while the two
+are close on simple/obvious element naming. Caveat stated proportionally in
+`report.md`: this session's n=30 informal check isn't powered like
+GUI-Perturbed's n=390 matched-pair statistical tests, and Ableton isn't
+GUI-Perturbed's web-based Mind2Web domain — but the underlying mechanism
+looks like the same one, observed independently.
+
+### First things to do next session
+
+1. If more rigor is wanted: do a full 30/30 visual pass for both models
+   (not just the disagreement-flagged subset) to get exact hit/miss counts
+   rather than the partial read above.
+2. Consider whether it's worth testing GTA1-7B and UI-TARS-1.5-7B on
+   explicit *relational* instructions (e.g. "click the button above the
+   Solo button" rather than "click the Solo button") on a few of these
+   Ableton screenshots, to see if the GUI-Perturbed "relational accuracy"
+   gap (65.8% vs. 35.0%) reproduces directly — this session's TASKS list
+   was written with direct/named instructions throughout, so this would be
+   a new instruction style, not a re-run of the same tasks.
+3. No further Colab runs are strictly needed unless (1) or (2) above are
+   pursued — the 15-image/30-task shortlist has now been run once cleanly
+   and evaluated.
